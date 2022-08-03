@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ResolveRPC:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ResolveRPC_jar</output-path>
+    <root id="archive" name="ResolveRPC.jar">
+      <element id="module-output" name="ResolveRPC" />
+      <element id="extracted-dir" path="H:/Pobrane/DiscordIPC.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
