@@ -14,7 +14,7 @@ Very very very simple ~~(and probably not memory efficient)~~ Discord Rich Prese
 - Enjoy your Rich Presence
 
 ## Todo
-- Getting currently open project name
+- ~~Getting currently open project name~~
 - Linux & macOS support
 
 ## Contributing
