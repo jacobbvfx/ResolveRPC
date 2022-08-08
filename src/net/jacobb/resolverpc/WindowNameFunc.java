@@ -21,11 +21,13 @@ public class WindowNameFunc {
                 unq = unq.replace("N/A", "");
 //                System.out.println(unq);
 
+
                 if (unq.contains("Project Manager")) {
                     current.set("Inside: Project Manager");
                 }
-                else if (unq.contains("DaVinci Resolve - ")){
-                    unq = unq.replace("DaVinci Resolve - ", "");
+                else if (unq.contains("DaVinci Resolve - ") || unq.contains("DaVinci Resolve Studio - ")) {
+                    unq = unq.replace("DaVinci Resolve - ", "")
+                            .replace("DaVinci Resolve Studio - ", "");
                     current.set("Editing: " + unq);
                 }
 
