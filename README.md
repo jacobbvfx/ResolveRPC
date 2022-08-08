@@ -15,6 +15,7 @@ Very very very simple ~~(and probably not memory efficient)~~ Discord Rich Prese
 
 ## Todo
 - ~~Getting currently open project name~~
+- Fix Studio version
 - Linux & macOS support
 
 ## Contributing
