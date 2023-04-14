@@ -1,6 +1,8 @@
 # ResolveRPC
 Very very very simple ~~(and probably not memory efficient)~~ Discord Rich Presence Client for [DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/). Thanks for little help [nadder](https://github.com/nadderus) :D.
 
+_It works just return to Maven, I guess ~ [BoyBACKS](https://github.com/BoyBACKS)_
+
 ## Screenshot
 ![alt text](https://i.imgur.com/KXniQP7.png "Rich Presence in Action")
 
