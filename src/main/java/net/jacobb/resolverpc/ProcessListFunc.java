@@ -40,7 +40,7 @@ public class ProcessListFunc {
         String line = sc.nextLine();
         String[] parts = line.split(",");
         String unq = parts[0].substring(1).replaceFirst(".$", "");
-        if (unq.equals("Discord.exe")) {
+        if (unq.equals("Discord.exe") || unq.equals("DiscordCanary.exe") || unq.equals("DiscordPTB.exe")) {
           found.set(true);
         }
       }
