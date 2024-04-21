@@ -78,11 +78,4 @@
             <version>18b6096</version>
         </dependency>
     </dependencies>
-    <distributionManagement>
-     <repository>
-         <id>github</id>
-         <name>GitHub Packages</name>
-         <url>https://maven.pkg.github.com/Pokeylooted/ResolveRPC</url>
-     </repository>
-    </distributionManagement>
 </project>
