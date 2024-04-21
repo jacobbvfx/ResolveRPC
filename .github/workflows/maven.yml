@@ -30,8 +30,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - uses: SierraSoftworks/gh-releases@v1.0.7
     - name: Publish GitHub Release Artifacts
+      uses: SierraSoftworks/gh-releases@v1.0.7
       with:
         files: |
           - target/*.jar
