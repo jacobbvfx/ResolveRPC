@@ -14,12 +14,6 @@ on:
       tag:
         description: 'Tag for the release'
         default: "v1.0.0"
-
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
 jobs:
   build:
 
@@ -41,7 +35,7 @@ jobs:
       with:
         files: |
            target/*.jar
-        tag_name: ${{ github.ref }}
+        tag_name: ${{ github.event.inputs.tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
