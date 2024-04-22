@@ -10,6 +10,11 @@ name: Java CI with Maven
 
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag for the release'
+        default: "v1.0.0"
+
   push:
     branches: [ "main" ]
   pull_request:
