@@ -31,11 +31,12 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Publish GitHub Release Artifacts
-      uses: SierraSoftworks/gh-releases@v1.0.7
+      uses: softprops/action-gh-release@v2
+      if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          - target/*.jar
-        release_tag: v1.0.0
+           target/*.jar
+        tag_name: ${{ github.ref }}
         token: ${{ secrets.GITHUB_TOKEN }}
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
