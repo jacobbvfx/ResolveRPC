@@ -3,7 +3,6 @@ package net.jacobb.resolverpc;
 import com.jagrosh.discordipc.*;
 import com.jagrosh.discordipc.entities.RichPresence;
 import com.jagrosh.discordipc.entities.pipe.PipeStatus;
-import com.jagrosh.discordipc.entities.pipe.WindowsPipe;
 import com.jagrosh.discordipc.exceptions.NoDiscordClientException;
 
 import java.io.IOException;

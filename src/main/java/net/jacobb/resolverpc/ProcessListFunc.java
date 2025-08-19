@@ -12,14 +12,15 @@ public class ProcessListFunc {
 
     Process process = new ProcessBuilder("tasklist.exe", "/fo", "csv", "/nh").start();
     new Thread(() -> {
-      Scanner sc = new Scanner(process.getInputStream());
-      if (sc.hasNextLine()) sc.nextLine();
-      while (sc.hasNextLine()) {
-        String line = sc.nextLine();
-        String[] parts = line.split(",");
-        String unq = parts[0].substring(1).replaceFirst(".$", "");
-        if (unq.equals("Resolve.exe")) {
-          found.set(true);
+      try (Scanner sc = new Scanner(process.getInputStream())) {
+        if (sc.hasNextLine()) sc.nextLine();
+        while (sc.hasNextLine()) {
+          String line = sc.nextLine();
+          String[] parts = line.split(",");
+          String unq = parts[0].substring(1).replaceFirst(".$", "");
+          if (unq.equals("Resolve.exe")) {
+            found.set(true);
+          }
         }
       }
     }).start();
@@ -34,14 +35,15 @@ public class ProcessListFunc {
 
     Process process = new ProcessBuilder("tasklist.exe", "/fo", "csv", "/nh").start();
     new Thread(() -> {
-      Scanner sc = new Scanner(process.getInputStream());
-      if (sc.hasNextLine()) sc.nextLine();
-      while (sc.hasNextLine()) {
-        String line = sc.nextLine();
-        String[] parts = line.split(",");
-        String unq = parts[0].substring(1).replaceFirst(".$", "");
-        if (unq.equals("Discord.exe") || unq.equals("DiscordCanary.exe") || unq.equals("DiscordPTB.exe")) {
-          found.set(true);
+      try (Scanner sc = new Scanner(process.getInputStream())) {
+        if (sc.hasNextLine()) sc.nextLine();
+        while (sc.hasNextLine()) {
+          String line = sc.nextLine();
+          String[] parts = line.split(",");
+          String unq = parts[0].substring(1).replaceFirst(".$", "");
+          if (unq.equals("Discord.exe") || unq.equals("DiscordCanary.exe") || unq.equals("DiscordPTB.exe")) {
+            found.set(true);
+          }
         }
       }
     }).start();

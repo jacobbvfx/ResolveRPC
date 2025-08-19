@@ -12,20 +12,21 @@ public class WindowNameFunc {
 
     Process process = new ProcessBuilder("tasklist", "/v", "/fo", "csv").start();
     new Thread(() -> {
-      Scanner sc = new Scanner(process.getInputStream());
-      if (sc.hasNextLine()) sc.nextLine();
-      while (sc.hasNextLine()) {
-        String line = sc.nextLine();
-        String[] parts = line.split(",");
-        String unq = parts[8].substring(1).replaceFirst(".$", "");
-        unq = unq.replace("N/A", "");
-        if (unq.contains("Project Manager")) {
-          current.set("Inside: Project Manager");
-        }
-        else if (unq.contains("DaVinci Resolve - ") || unq.contains("DaVinci Resolve Studio - ")) {
-          unq = unq.replace("DaVinci Resolve - ", "")
-              .replace("DaVinci Resolve Studio - ", "");
-          current.set("Editing: " + unq);
+      try (Scanner sc = new Scanner(process.getInputStream())) {
+        if (sc.hasNextLine()) sc.nextLine();
+        while (sc.hasNextLine()) {
+          String line = sc.nextLine();
+          String[] parts = line.split(",");
+          String unq = parts[8].substring(1).replaceFirst(".$", "");
+          unq = unq.replace("N/A", "");
+          if (unq.contains("Project Manager")) {
+            current.set("Inside: Project Manager");
+          }
+          else if (unq.contains("DaVinci Resolve - ") || unq.contains("DaVinci Resolve Studio - ")) {
+            unq = unq.replace("DaVinci Resolve - ", "")
+                .replace("DaVinci Resolve Studio - ", "");
+            current.set("Editing: " + unq);
+          }
         }
       }
     }).start();
